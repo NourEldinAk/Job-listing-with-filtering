@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html , body , #root{
+min-height: 100%;
+  min-width: 100%;
+  background-color:hsl(180, 52%, 96%) ;
+  position:sticky;
+
+}
+
+.img{
+  top: -120px;
+}
+.filter-bar-position{
+  top: -100px;
+  left:0px;
+ }
+ @media screen and (max-width:830px) {
+  .filter-bar-position{
+    top: -160px;
+  
+   }
+ }
+
+@layer components{
+  .mobile-tablet{
+    @apply flex-col h-full relative 
+  }
+  .mobile-tablet img{
+    @apply absolute  w-[60px]
+  }
+  .tablet-skill-mobile{
+    @apply text-base flex flex-wrap my-0 border-t-2 h-[80px] items-center
+  }
+  .tablet-container{
+    @apply bg-white tablet-width  h-[110px] max-[830px]:mobile-tablet flex shadow-lg gap-6 p-4
+  }
+  .tablet-width{
+    @apply w-[900px] max-[940px]:w-[800px]  max-[830px]:w-[360px]
+  }
+}
